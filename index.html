@@ -10,20 +10,39 @@
 </head>
 
 <body>
+    <button id="toggleLanguage">Switch to English</button>
+    <select id="themeSelector">
+        <option value="default">الوضع الافتراضي</option>
+        <option value="dark">الوضع الليلي</option>
+        <option value="light">الوضع الفاتح</option>
+    </select>
+    <p>عدد المنتجات في السلة: <span id="cartCount">0</span></p>
+<!-- زر الدردشة المباشرة -->
+<div id="chatButton" style="position: fixed; bottom: 20px; right: 20px; background-color: #007bff; color: white; padding: 10px; border-radius: 50%; cursor: pointer;">
+    💬
+</div>
+
+<!-- نافذة الدردشة -->
+<div id="chatWindow" style="display: none; position: fixed; bottom: 70px; right: 20px; width: 300px; background-color: white; border: 1px solid #ccc; border-radius: 5px;">
+    <div style="padding: 10px; background-color: #007bff; color: white;">الدردشة مع الدعم</div>
+    <div id="chatContent" style="height: 200px; overflow-y: auto; padding: 10px;"></div>
+    <input type="text" id="chatInput" placeholder="اكتب رسالتك هنا..." style="width: 100%; padding: 5px;">
+</div>
+
     <header>
         <h1>مرحبًا بكم في موقعنا</h1>
     </header>
 
     <nav>
         <ul>
-            <li><a href="#contact">تواصل معنا</a></li>
-            <li><a href="#products">المنتجات</a></li>
             <li><a href="#home">الرئيسية</a></li>
+            <li><a href="#products">المنتجات</a></li>
+            <li><a href="#contact">تواصل معنا</a></li>
         </ul>
     </nav>
 
     <section id="home" class="hero">
-        <h2>أهلاً وسهلاً بكم!</h2>
+        <h2>أهلاً بك في موقعنا!</h2>
         <p>استمتعوا بأفضل العروض والمنتجات المتاحة لدينا.</p>
 
         <!-- إضافة الفيديو -->
@@ -70,10 +89,28 @@
             <p><a href="tel:+20 115 220 6421">للتوصل عبر الوتساب</a></p>
         </div>
     </section>
+    <!-- نموذج التواصل -->
+<section id="contactForm">
+    <h2>تواصل معنا</h2>
+    <form id="form">
+        <label for="email">البريد الإلكتروني:</label>
+        <input type="email" id="email" required>
+        <button type="submit">إرسال</button>
+    </form>
+    <p id="message" style="color: red;"></p>
+</section>
+<!-- شريط التحميل -->
+<div id="loadingBar" style="height: 5px; background-color: #3498db; width: 0%;"></div>
+<button id="toggleDarkMode">تفعيل الوضع الليلي</button>
+
 
     <footer id="contact">
         <p>تواصل معنا عبر البريد الإلكتروني: <a href="mailto:brda3890@outlook.com">brda3890@outlook.com</a></p>
     </footer>
+    <h2 id="typewriter"></h2>
+
+    <!-- ربط ملف JavaScript -->
+    <script src="script.js"></script>
 </body>
 
 </html>
